@@ -199,3 +199,21 @@ footer {
     text-align: center;
     padding: 20px;
 }
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.grid-item {
+    background-color: #2ecc71;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
