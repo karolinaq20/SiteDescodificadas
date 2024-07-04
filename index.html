@@ -11,17 +11,18 @@
 <body>
     <header>
         <nav>
-            <div class="logo">
-                <img src="assets/css/imagens/Logotipo-removebg-preview.png" alt="Logotipo">
-            </div>
-            <div>
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#servicos">Nossos Serviços</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </div>
+            <ul class="menu">
+                <li><a href="#inicio">Início</a></li>
+                <li class="dropdown">
+                    <a href="#servicos" class="dropbtn">Serviços</a>
+                    <div class="dropdown-content">
+                        <a href="#servicos">Botox</a>
+                        <a href="#servicos">Colágeno</a>
+                        <a href="#servicos">Harmonização Facial</a>
+                    </div>
+                </li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#contato">Contato</a></li>
         </nav>
     </header>
     <div class="imagem-div">
@@ -32,7 +33,6 @@
     </div>
 
     <div class="container">
-
         <!-- Section Sobre -->
         <section class="feature" id="sobre">
             <h1>Sobre Nossa Clínica</h1>
@@ -49,59 +49,123 @@
         </section>
 
         <!-- Section Serviços -->
-        <div class="servico">
+        <div class="servico" id="servicos">
             <h1>Nossos Serviços</h1>
         </div>
 
-        <section class="gallery" id="servicos">
-            <!-- Botox -->
-            <div class="servico">
-                <h4>Botox</h4>
-                <img src="assets/css/imagens/botox.jpg" alt="Botox">
-                <p>O Botox, também conhecido como toxina botulínica, é um dos segredos mais bem guardados para
-                    revitalizar
-                    sua aparência com elegância e naturalidade. Nossa clínica de estética oferece tratamentos de Botox
-                    para
-                    ajudar você a suavizar linhas de expressão e rugas indesejadas. </p>
+        <section class="card-section" id="card">
+            <div class="card">
+                <div class="card-front">
+                    <img src="assets/css/imagens/1984779023-botox-x-sequelas-na-face.webp" alt="Imagem do Card" class="card-image">
+                    <div class="card-title">Botox</div>
+                    <button class="card-button" onclick="flipCard(this)">Saiba Mais</button>
+                </div>
+                <div class="card-back">
+                    <h2>Botox</h2>
+                    <p>O Botox, também conhecido como toxina botulínica, é um dos segredos mais bem guardados para
+                        revitalizar
+                        sua aparência com elegância e naturalidade. Nossa clínica de estética oferece tratamentos de Botox
+                        para
+                        ajudar você a suavizar linhas de expressão e rugas indesejadas.</p>
+                    <button class="card-button-voltar" onclick="flipCard(this)">Voltar</button>
+                </div>
             </div>
-            <div class="vertical-divider"></div>
-
-            <!-- Colágeno -->
-            <div class="servico">
-                <h4>Colágeno</h4>
-                <img src="assets/css/imagens/tratamentoPele.jpg" alt="Tratamento Facial">
-                <p>O colágeno é o alicerce da sua pele, uma proteína vital que confere firmeza, elasticidade e uma
-                    aparência
-                    jovem. Com o tempo, a produção de colágeno diminui, resultando em rugas e perda de firmeza. Na nossa
-                    clínica de estética, oferecemos tratamentos de colágeno para revitalizar sua pele e restaurar sua
-                    vitalidade. </p>
+    
+            <div class="card">
+                <div class="card-front">
+                    <img src="assets/css/imagens/tratamentoPele.jpg" alt="Imagem do Card" class="card-image">
+                    <div class="card-title">Colágeno</div>
+                    <button class="card-button" onclick="flipCard(this)">Saiba Mais</button>
+                </div>
+                <div class="card-back">
+                    <h2>Colágeno</h2>
+                    <p>O colágeno é o alicerce da sua pele, uma proteína vital que confere firmeza, elasticidade e uma
+                        aparência
+                        jovem. Com o tempo, a produção de colágeno diminui, resultando em rugas e perda de firmeza. Na nossa
+                        clínica de estética, oferecemos tratamentos de colágeno para revitalizar sua pele e restaurar sua
+                        vitalidade.</p>
+                    <button class="card-button-voltar" onclick="flipCard(this)">Voltar</button>
+                </div>
             </div>
-            <div class="vertical-divider"></div>
-
-            <!-- Harmonização Facial -->
-            <div class="servico">
-                <h4>Harmonização Facial</h4>
-                <img src="assets/css/imagens/harmonizacaoFacial.jpg" alt="Tratamento Facial">
-                <p>A harmonização facial é a arte de realçar sua beleza natural, respeitando a individualidade de cada
-                    traço
-                    e expressão. Em nossa clínica de estética, entendemos que cada rosto é único, e é por isso que
-                    oferecemos tratamentos de harmonização facial personalizados para revelar o seu melhor eu. </p>
+    
+            <div class="card">
+                <div class="card-front">
+                    <img src="assets/css/imagens/harmonizacaoFacial.jpg" alt="Imagem do Card" class="card-image">
+                    <div class="card-title">Harmonização Facial</div>
+                    <button class="card-button" onclick="flipCard(this)">Saiba Mais</button>
+                </div>
+                <div class="card-back">
+                    <h2>Harmonização Facial</h2>
+                    <p>A harmonização facial é a arte de realçar sua beleza natural, respeitando a individualidade de cada
+                        traço
+                        e expressão. Em nossa clínica de estética, entendemos que cada rosto é único, e é por isso que
+                        oferecemos tratamentos de harmonização facial personalizados para revelar o seu melhor eu.</p>
+                    <button class="card-button-voltar" onclick="flipCard(this)">Voltar</button>
+                </div>
             </div>
         </section>
+        
+        <!-- Carousel -->
+        <section class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <img src="assets/css/imagens/786c32_bf56e6322f8746339b9b5c80df1530b1~mv2.webp" alt="Image 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/css/imagens/Audrey_final_04.webp" alt="Image 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/css/imagens/images.jpg" alt="Image 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/css/imagens/Rectangle-24.png" alt="Image 4">
+                </div>
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </section>
+
         <section>
+            <div>
+             <h2 class="text">Galeria de Procedimentos</h2>
+            </div>
             <div class="grid-container">
-                <div class="grid-item"><img src="assets/css/imagens/786c32_bf56e6322f8746339b9b5c80df1530b1~mv2.webp" alt="Image 1"></div>
-                <div class="grid-item"><img src="assets/css/imagens/Audrey_final_04.webp" alt="Image 2"></div>
-                <div class="grid-item"><img src="assets/css/imagens/images.jpg" alt="Image 3"></div>
-                <div class="grid-item"><img src="assets/css/imagens/Rectangle-24.png" alt="Image 4"></div>
-                <div class="grid-item"><img src="assets/css/imagens/imgonline-com-ua-compressed-Cigv8I9DeMVc4u.webp" alt="Image 5"></div>
-                <div class="grid-item"><img src="assets/css/imagens/786c32_78dba42bbd1b4a5a854974edf40e1f87~mv2.webp" alt="Image 6"></div>
-                <div class="grid-item"><img src="assets/css/imagens/786c32_db16e722e00946518d9847875236fd47~mv2.webp" alt="Image 7"></div>
-                <div class="grid-item"><img src="assets/css/imagens/20210927145746940210e.webp" alt="Image 8"></div>
-                <div class="grid-item"><img src="assets/css/imagens/images (1).jpg" alt="Image 9"></div>
-                <div class="grid-item"><img src="assets/css/imagens/harmonizacaoFacial.jpg" alt="Image 10"></div>
+                <div class="grid-item">
+                    <img src="assets/css/imagens/786c32_bf56e6322f8746339b9b5c80df1530b1~mv2.webp" alt="Image 1">
+                </div>
+                <div class="grid-item">
+                    <img src="assets/css/imagens/Audrey_final_04.webp" alt="Image 2">
+                </div>
+                <div class="grid-item">
+                    <img src="assets/css/imagens/images.jpg" alt="Image 3">
+                </div>
+                <div class="grid-item">
+                    <img src="assets/css/imagens/Rectangle-24.png" alt="Image 4">
+                </div>
+                <div class="grid-item">
+                    <img src="assets/css/imagens/imgonline-com-ua-compressed-Cigv8I9DeMVc4u.webp" alt="Image 5">
+                </div>
+                <div class="grid-item">
+                    <img src="assets/css/imagens/786c32_78dba42bbd1b4a5a854974edf40e1f87~mv2.webp" alt="Image 6">
+                </div>
+                <div class="grid-item">
+                    <img src="assets/css/imagens/786c32_db16e722e00946518d9847875236fd47~mv2.webp" alt="Image 7">
+                </div>
+                <div class="grid-item">
+                    <img src="assets/css/imagens/20210927145746940210e.webp" alt="Image 8">
+                </div>
+                <div class="grid-item">
+                    <img src="assets/css/imagens/images (1).jpg" alt="Image 9">
+                </div>
+                <div class="grid-item">
+                    <img src="assets/css/imagens/harmonizacaoFacial.jpg" alt="Image 10">
+                </div>
+                <div class="grid-item">
+                    <img src="assets/css/imagens/harmonizacaoFacial.jpg" alt="Image 10">
+                </div>
             </div>
         </section>
+
         <section class="feature video">
             <div>
                 <h1>Assista ao nosso vídeo</h1>
@@ -140,6 +204,8 @@
     <footer>
         <p>Desenvolvido por Karolina Queiroz | © 2023 Copyright</p>
     </footer>
+
+    <script src="assets/css/javascript.js"></script>
 </body>
 
 </html>

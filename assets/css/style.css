@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #3ba17aba;
+    background-color: #3ba17a;
     padding: 10px;
     position: fixed;
     width: 100%;
@@ -49,8 +49,69 @@ a {
     font-weight: bold;
 }
 
+body {
+    font-size: 1rem;
+    /* Ajuste base */
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9rem;
+        /* Ajuste para tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 0.8rem;
+        /* Ajuste para celular */
+    }
+}
+
 a:hover {
     color: #2a4f41;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.text {
+    color: white;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+}
+
+.menu a:hover {
+    background-color: #2a4f41;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3ba17aba;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 10px 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .logo {
@@ -123,12 +184,6 @@ a:hover {
     font-size: 18px;
 }
 
-.vertical-divider {
-    border-left: 1px solid rgb(217, 147, 19);
-    height: 650px;
-    margin: 0 20px;
-}
-
 .cta {
     text-align: center;
     margin-top: 20px;
@@ -199,6 +254,8 @@ footer {
     text-align: center;
     padding: 20px;
 }
+
+/* Estilos para a Grid de Imagens */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -210,10 +267,235 @@ footer {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    /* Altura fixa para os itens da grid */
 }
 
 .grid-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
+    border-radius: 8px;
+}
+
+/* Estilos para o Card */
+
+.card-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Permite que os cards quebrem a linha se necessário */
+    gap: 20px;
+    /* Espaçamento entre os cards */
+    margin: 20px 0;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    position: relative;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff14;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.card-front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card-flip .card-front {
+    transform: rotateY(-180deg);
+}
+
+.card-flip .card-back {
+    transform: rotateY(0deg);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    /* Define a altura fixa para as imagens */
+    object-fit: cover;
+    /* Faz a imagem cobrir o espaço disponível sem distorção */
+    border-radius: 8px 8px 0 0;
+}
+
+.card-title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    /* Fundo transparente */
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 1.2em;
+}
+
+.card-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3ba17aba;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-button-voltar {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #3ba17aba;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-button:hover,
+.card-button-voltar:hover {
+    background-color: #2a4f41;
+    transform: scale(1.05);
+    /* Slightly enlarge button on hover */
+}
+
+
+/* Estilos para o Carrossel */
+.carousel {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 97%;
+    border-radius: 10%;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #0fe5b6;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgb(0 0 0 / 0%);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .header {
+        padding: 10px;
+    }
+
+    .nav-item {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-button,
+    .card-button-voltar {
+        font-size: 0.8rem;
+    }
 }
