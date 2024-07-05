@@ -1,11 +1,4 @@
-// JavaScript para o Carousel e Menu Responsivo
 
-// document.addEventListener('DOMContentLoaded', function () {
-    // const menuToggle = document.querySelector('.menu-toggle');
-    // const menu = document.querySelector('.menu');
-    // menuToggle.addEventListener('click', function () {
-        // menu.classList.toggle('show');
-    // });
 {
     function flipCard(button) {
         var card = button.closest('.card');
@@ -32,10 +25,9 @@
     
     function autoSlide() {
         changeSlide(1);
-        setTimeout(autoSlide, 3000); // Change image every 3 seconds
+        setTimeout(autoSlide, 3000); 
     }
     
-    // Start the automatic slide show
     autoSlide();
     
 };
